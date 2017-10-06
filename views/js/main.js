@@ -517,16 +517,15 @@ function updatePositions() {
 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
   var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
+for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
       // change --> move the line below out side the loop
 //    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
-      //change ---> from Left to transform
+      //change ---> using transform 
     //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-      var xValue = - items[i].basicLeft + 750 * phase + 'px';
-      //A negative translateX() value moves an element right-to-left
-    items[i].style.transform = 'translateX('+ xValue+')';
+     //var xValue = - items[i].basicLeft + 750 * phase + 'px';
+    items[i].style.transform = 'translateX('+ 100 * phase + 'px)';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -556,7 +555,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // change ---> resize the image inline so no need to resize throgh browser////////////////////////////////////////////////////
     elem.style.height = "100px";
     elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
+    //elem.basicLeft = (i % cols) * s;
+    elem.style.left = (i % cols) * s + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
       // change ---> use getElementById insted of querySelector
     document.getElementById("movingPizzas1").appendChild(elem);

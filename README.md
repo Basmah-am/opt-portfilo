@@ -1,6 +1,11 @@
+
+
 ## Website Performance Optimization portfolio project
 ### Getting started
-
+### Installation:
+*Download the app.
+*Open index.html file in the browser.
+*Here you go.
 #### Part 1: Optimize PageSpeed Insights score for index.html
 * Compress profilepic.jpg and pizzeria.jpg images.
 * Remove google font 
