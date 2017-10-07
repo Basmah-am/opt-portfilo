@@ -548,11 +548,12 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  var rows = window.screen.height;
+  var numerofpizza = (rows / s) * cols;
+  for (var i = 0; i < numerofpizza; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
-      // change ---> resize the image inline so no need to resize throgh browser////////////////////////////////////////////////////
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     //elem.basicLeft = (i % cols) * s;
